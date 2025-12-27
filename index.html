@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Mercer | AI & Robotics</title>
+    <style>
+        /* CSS VARIABLES FOR EASY COLOR CHANGES */
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #e5e5e5;
+            --accent-color: #3b82f6; /* Electric Blue */
+            --secondary-text: #a3a3a3;
+            --card-bg: #171717;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* RESET & BASE STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        /* LAYOUT UTILITIES */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+        a { text-decoration: none; color: var(--text-color); transition: 0.2s; }
+        a:hover { color: var(--accent-color); }
+        
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 60px;
+        }
+        .nav-links a { margin-left: 20px; font-size: 0.9rem; color: var(--secondary-text); }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        /* HERO SECTION */
+        .hero { padding: 40px 0 80px 0; }
+        .hero h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: var(--secondary-text); max-width: 600px; }
+        .hero .highlight { color: var(--accent-color); }
+
+        /* SECTIONS GENERAL */
+        section { margin-bottom: 80px; }
+        .section-title { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--secondary-text); margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .skill-category h3 { font-size: 1rem; margin-bottom: 10px; }
+        .skill-list { list-style: none; color: var(--secondary-text); font-size: 0.9rem; }
+
+        /* PROJECT CARDS */
+        .project-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            transition: transform 0.2s ease;
+        }
+        .project-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .project-tech { font-size: 0.8rem; font-family: monospace; color: var(--accent-color); margin-top: 15px; display: block;}
+        .project-links a { font-size: 0.85rem; margin-right: 15px; text-decoration: underline; text-underline-offset: 4px; }
+
+        /* FOOTER */
+        footer { text-align: center; color: var(--secondary-text); font-size: 0.8rem; padding-bottom: 40px; }
+
+        /* MOBILE TWEAKS */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { flex-direction: column; gap: 15px; align-items: flex-start; }
+            .nav-links a { margin-left: 0; margin-right: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div style="font-weight: bold; font-size: 1.2rem;">Alex Mercer.</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="mailto:alex@example.com">Contact</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <h1>Building intelligent systems that <span class="highlight">move</span>.</h1>
+            <p>
+                High School Senior passionate about the intersection of Computer Vision, Embodied AI, and Control Systems. Currently experimenting with ROS2 and Neural Networks.
+            </p>
+        </header>
+
+        <section id="projects">
+            <div class="section-title">Selected Projects</div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Autonomous Rover with SLAM</h3>
+                </div>
+                <p style="color: var(--secondary-text);">
+                    Designed and 3D printed a 4-wheel rover capable of mapping a room autonomously. Implemented LIDAR data processing using ROS2 to generate real-time occupancy grids.
+                </p>
+                <span class="project-tech">Python // ROS2 // Raspberry Pi // C++</span>
+                <div style="margin-top: 15px;">
+                    <a href="#">View on GitHub &nearr;</a>
+                    <a href="#">Watch Demo &nearr;</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Sign Language Recognition Hand</h3>
+                </div>
+                <p style="color: var(--secondary-text);">
+                    Created a robotic prosthetic prototype that mimics hand gestures captured via a webcam. Used OpenCV and MediaPipe for hand tracking, mapped to servo movements.
+                </p>
+                <span class="project-tech">OpenCV // TensorFlow // Arduino // CAD</span>
+                <div style="margin-top: 15px;">
+                    <a href="#">View on GitHub &nearr;</a>
+                    <a href="#">Read Paper &nearr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-title">Technical Stack</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python (Advanced)</li>
+                        <li>C++ (Intermediate)</li>
+                        <li>MATLAB</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AI / ML</h3>
+                    <ul class="skill-list">
+                        <li>PyTorch / TensorFlow</li>
+                        <li>OpenCV (Computer Vision)</li>
+                        <li>Scikit-Learn</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Robotics / Hardware</h3>
+                    <ul class="skill-list">
+                        <li>ROS / ROS2</li>
+                        <li>Arduino & Raspberry Pi</li>
+                        <li>Fusion 360 (CAD)</li>
+                        <li>Soldering & Circuitry</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-title">Background</div>
+            <p style="color: var(--secondary-text); margin-bottom: 20px;">
+                I am currently a senior at [High School Name], where I lead the FIRST Robotics Competition (FRC) programming team. My primary focus is understanding how we can make robots more adaptable to unstructured environments using deep learning.
+            </p>
+            <p style="color: var(--secondary-text);">
+                When I'm not coding, I'm competing in math Olympiads or hiking. I am looking for research opportunities or internships for Summer 2024.
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Alex Mercer. Built with code.</p>
+            <div style="margin-top: 10px;">
+                <a href="#" style="margin: 0 10px;">LinkedIn</a>
+                <a href="#" style="margin: 0 10px;">GitHub</a>
+                <a href="#" style="margin: 0 10px;">Resume (PDF)</a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
